@@ -1,0 +1,51 @@
+components: 
+    schemas:
+        createProduct:
+            type: object
+            required: 
+                - name
+                - price
+                - condition
+                - status
+                - stock
+            properties: 
+                name: 
+                    type: string
+                    example: Product name
+                price:
+                    type: number
+                    example: 10000
+                condition:
+                    type: string
+                    example: new
+                status:
+                    type: string
+                    example: inactive
+                stock:
+                    type: number
+                    example: 10
+        
+        updateProduct:
+            type: object
+            required: 
+                - name
+                - price
+                - condition
+                - status
+                - stock
+            properties: 
+                name: 
+                    type: string
+                    example: Product name
+                price:
+                    type: number
+                    example: 10000
+                condition:
+                    type: string
+                    example: new
+                status:
+                    type: string
+                    example: inactive
+                stock:
+                    type: number
+                    example: 10
