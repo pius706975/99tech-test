@@ -1,65 +1,64 @@
 
-# 📦 Backend Boilerplate With Express.js - Typescript - Sequelize 
+# 📦 # Problem 5: A Crude Server 
 
-This is a simple boilerplate with **Express.js** with a ready-to-use configuration for backend development. You can adjust it according to your requirements.
-
----
-
-## ✨ Features
-- ⚡ [**Express.js**](https://expressjs.com/) as the backend framework
-- 📋 [**Swagger**](https://swagger.io/docs/) for API documentations
-- 🛠 [**Typescript**](https://www.typescriptlang.org/docs/) for strong type support
-- 📄 **Linting** with [**ESlint**](https://eslint.org/docs/latest/) and [**Prettier**](https://prettier.io/docs/en/)
-
----
-
-## 🚀 Prerequisite
-
-Make sure you have installed the following tools:
-
-- **Node.js** >= v18.x.x  
-- **npm** atau **yarn**
-
----
 
 ## 📥 Installation
 
 1. Clone repository:
 
    ```bash
-   git clone https://github.com/pius706975/express-typescript-sequelize-boilerplate.git
+   git clone https://github.com/pius706975/99tech-test.git
    ```
 
-2. Install the dependencies:
+2. Navigate to the directory
+   ```bash
+   cd to problem5
+   ```
+
+3. Install the dependencies:
 
    ```bash
    npm install
    ```
 
-3. Create `.env.development` to store the environment configuration:
+4. Create `.env.development` to store the environment configuration:
 
    ```bash
    .env.development
    ```
 
-4. Fill the `.env.development` file based on your requirements:
+5. Fill the `.env.development` file based on your requirements:
 
    ```
-    PORT = port number
-    NODE_ENV = env
-    BASE_URL = base url
-    
-    DB_PORT = db port
-    DB_USERNAME = db username
-    DB_PASSWORD = db password
-    DB_NAME = db name
-    DB_HOST = host
-    DB_DIALECT = dialect
-    
-    JWT_ACCESS_TOKEN_SECRET = JWT secret
+    PORT = 5000
+    NODE_ENV = development
+    BASE_URL = http://localhost:5000/api
+
+    DB_PORT = <your db port e.g., 5432>
+    DB_USERNAME = <your db username e.g., john>
+    DB_PASSWORD = <your db password e.g., john123>
+    DB_NAME = <your db name e.g., dbtest>
+    DB_HOST = <your db host e.g., localhost>
+    DB_DIALECT = postgres
+
+    JWT_ACCESS_TOKEN_SECRET = <you can fill out with random string but generate a proper secret is recommended>
    ```
 
 ## 🏃 Run the server
+
+Run database migration and seed so that you don't need to create a new account or add new resource. Use the provided resource to make it easier.
+
+```bash
+# run db migration
+
+npm run migration
+```
+
+```bash
+# run db seed to fill out the provided data into database
+
+npm run db:seed
+```
 
 Run the server in the development mode:
 
@@ -97,38 +96,6 @@ Access swagger documentations: [http://localhost:5000/api-docs](http://localhost
 
 Swagger will automatically return the documentations based on route file annotation.
 
----
-
-## 📂 Project structure
-
-Let's have a look at this structure:
-
-```
-├── /node_modules
-├── /src                 
-│   ├── /config          # Base configuration such as .env key and sequelize-cli configuration
-│   ├── /database
-│   │   ├── /migrations  # DB migration files to migrate our DB tables
-│   │   └── /models      # DB model files that will be used in the development
-│   ├── /docs            # Swagger documentations
-│   ├── /interfaces      # Interfaces
-│   ├── /logs            # Access logs
-│   ├── /middleware      # App middlewares
-│   ├── /modules         # App modules
-│   │   ├── /auth        #    
-│   │   ├── /user        # These module directories will store repo, service, controller, routes, and validator files.
-│   │   └── /etc         #
-│   ├── /routes          # Main route file that store all of the module routes 
-│   ├── /types           # typescript support
-│   ├── /utils           # Utils
-│   └── server.js        # Entry point of the app
-├── .env.local           # Development environment variables
-├── package.json         # Dependencies and scripts
-└── README.md            # Project documentation
-```
-
----
-
 ## 🔗 The example of API Request
 
 **POST** a request to `/api/example`:
@@ -147,6 +114,6 @@ Response:
 
 ---
 
-## 👨‍💻 Contributor
+## 👨‍💻 Author
 
 - Pius Restiantoro - [GitHub](https://github.com/pius706975)
